@@ -1,0 +1,14 @@
+⎕PP←34
+line←⊃⊃⎕NGET'02.txt'1
+ranges←(⍎¨'-'∘≠⊆⊢)¨(','∘≠⊆⊢)line
+ids←∊(⊣,⊣+∘⍳-⍨)/¨ranges
+divisors←⌊⍛=⍛/⊢÷⍳
+chunk←⊢⍴⍨⊣,÷⍨∘≢
+invalid←{
+ digits←⍕⍵
+ sizes←⍺⍺⍛/divisors≢digits
+ ⍬≡sizes:0
+ ∨/sizes(1=∘≢∘∪chunk)¨⊂digits
+}
+⎕←+/(2∘=)invalid¨⍛/ids
+⎕←+/(2∘≤)invalid¨⍛/ids
