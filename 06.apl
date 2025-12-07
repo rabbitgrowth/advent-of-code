@@ -1,5 +1,8 @@
 ⎕PP←34
 lines←⊃⎕NGET'06.txt'2
-nums←⍎⍤1⊢¯1↓lines
-ops←' '~⍨⊢⌿lines
-⎕←+/(×⌿nums/⍨'*'=ops),+⌿nums/⍨'+'=ops
+digits←¯1↓lines
+nums←⍎⍤1⊢digits
+add mul←↓'+*'∘.=' '~⍨⊢⌿lines
+⎕←+/(×⌿mul/nums),+⌿add/nums
+nums←⍎¨¨(∨.≠∘' '⊆↓)⍉digits
+⎕←+/(×/¨mul/nums),+/¨add/nums
