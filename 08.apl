@@ -4,5 +4,11 @@ distances←∘.distance⍨points
 shortest←{(,⍳⍴⍵)[⍋,⍵]}distances
 connect←1000
 length←(2×connect)+≢points
-graph←(⍳⍴distances)∊length↑shortest
+pairs←⍳⍴distances
+graph←pairs∊length↑shortest
 ⎕←×/3↑{⍵[⍒⍵]}+/∪∨.∧⍣≡⍨graph
+⎕←(length↓shortest){
+ graph←∨.∧⍣≡⍨⍵∨pairs∊2↑⍺
+ ∧/,graph:×/⊃¨points[⊃⍺]
+ (2↓⍺)∇graph
+}graph
