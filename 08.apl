@@ -1,3 +1,8 @@
 points←⍎¨⊃⎕NGET'08.txt'1
 distance←+/×⍨⍤-
-⎕←×/3↑{⍵[⍒⍵]}+/∪∨.∧⍣≡⍨⍸⍣¯1{⍵[⍋⍵]}3000↑{(,⍳⍴⍵)[⍋,⍵]}∘.distance⍨points
+distances←∘.distance⍨points
+shortest←{(,⍳⍴⍵)[⍋,⍵]}distances
+connect←1000
+length←(2×connect)+≢points
+graph←(⍳⍴distances)∊length↑shortest
+⎕←×/3↑{⍵[⍒⍵]}+/∪∨.∧⍣≡⍨graph
