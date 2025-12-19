@@ -1,5 +1,5 @@
 lines←⊃⎕NGET'02.txt'1
-pad←¯1⊖¯1⌽(2+⍴)⍛↑
+pad←(' ',⌽∘⍉)⍣4
 map1←pad 3 3⍴1↓⎕D
 map2←pad['  1  '
          ' 234 '
