@@ -1,7 +1,8 @@
-(out;in):+{{x@.=2!!#x}@,/"]"\'"["\x}'0:"07.txt" /strings outside/inside []
-axa:{(~~/2#x)&(|x)~x}    /is abba or aba
-abba:|/,/4axa':'         /has abba
-aba:{{x@&axa'x}@,/3':'x} /get aba's
-bab:3#1_                 /aba->bab
-+/(~abba'in)&abba'out
-+/0|/'~^(aba'in)?'bab''aba'out
+l:0:"07.txt"
++/{i:-3_+\-/"[]"=\:x
+ a:{(=/2#x)<&/=/x(0 1;3 2)}@+4':x
+ (~|/a&i)&|/a&~i}'l
++/{i:-2_+\-/"[]"=\:x
+ a:{</=/x(0 0;1 2)}@+3':x
+ /ok to match x[x and x]x since [x[ and ]x] are impossible
+ 0|/~^?/x(1 0+/:&a&i;0 1+/:&a&~i)}'l
