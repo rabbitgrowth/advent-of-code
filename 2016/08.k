@@ -1,5 +1,5 @@
 l:0:"08.txt"
-rect:{@[z;!y;@[;!x;:;1]]}
+rect:{.[z;!'y,x;:;1]}
 rot:{n:-(#x)!y;(n#x),n_x}
 rotr:{ @[ z;x;rot;y]}
 rotc:{+@[+z;x;rot;y]}
