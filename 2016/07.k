@@ -4,4 +4,4 @@ abba:|/,/4axa':'         /has abba
 aba:{{x@&axa'x}@,/3':'x} /get aba's
 bab:3#1_                 /aba->bab
 +/(~abba'in)&abba'out
-+/0|/',/'(aba'in)~/:\:'bab''aba'out
++/0|/'~^(aba'in)?'bab''aba'out
