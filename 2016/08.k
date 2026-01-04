@@ -6,7 +6,7 @@ rotc:{+@[+z;x;rot;y]}
 f:{w:" "\x
    :["rect"~*w
      rect.`I$"x"\*|w
-     (rotr;rotc)["rc"?*w@1].`I$2 0_'w@2 4]}'l
+     (rotr;rotc)["rc"?*w 1].`I$2 0_'w 2 4]}'l
 s:(6 50#0){y x}/f
 +//s
 `0:" #"s
