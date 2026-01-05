@@ -1,11 +1,12 @@
-l:0:"08.txt"
-rect:{.[z;!'y,x;:;1]}
-rot:{x@(#x)!(!#x)-y}
-rotr:{ @[ z;x;rot;y]}
-rotc:{+@[+z;x;rot;y]}
-f:{w:" "\x
-   :[2~#w;rect.`I$"x"\w 1
-     (rotr;rotc)["c"~*w 1].`I$2 0_'w 2 4]}'l
-s:(6 50#0){y x}/f
+c:0:"08.txt"       /commands
+e:.(!/2#,,/$!10)@  /extract numbers
+b:{y~(#y)#x}       /begins with
+r:{x@(#x)!(!#x)-y} /rotate right
+s:6 50#0           /screen
+u:{(m;n):e y       /update screen
+   :[b[y;"rect"         ];.[x;!'n,m;:;1]
+     b[y;"rotate row"   ]; @[ x;m;r;n]
+     b[y;"rotate column"];+@[+x;m;r;n]]}
+s:s u/c
 +//s
 `0:" #"s
