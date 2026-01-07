@@ -29,4 +29,4 @@ while (full := [bot for bot, chips in slots.items() if len(chips) == 2]):
         slots[lo_to].append(lo)
         slots[hi_to].append(hi)
 
-print(math.prod(slots[f'output {n}'][0] for n in '012'))
+print(math.prod(slots[f'output {i}'][0] for i in range(3)))
